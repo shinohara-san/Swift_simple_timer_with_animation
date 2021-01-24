@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0E99C4F1A4D3485BD8C9346E /* Pods_Mytimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09780AE3D19639A8200B1D1 /* Pods_Mytimer.framework */; };
+		9518A0AD25BD56F200B26C7F /* TimerListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518A0AB25BD56F200B26C7F /* TimerListTableViewCell.swift */; };
+		9518A0AE25BD56F200B26C7F /* TimerListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9518A0AC25BD56F200B26C7F /* TimerListTableViewCell.xib */; };
 		955870A525BC40C4004575A8 /* MyTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955870A425BC40C4004575A8 /* MyTimer.swift */; };
 		955870A825BC4133004575A8 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955870A725BC4133004575A8 /* DatabaseManager.swift */; };
 		958C19FF25BC068200A8CD53 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958C19FE25BC068200A8CD53 /* ListViewController.swift */; };
@@ -23,6 +25,8 @@
 
 /* Begin PBXFileReference section */
 		2C5FE235291A6D2497E4A029 /* Pods-Mytimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mytimer.release.xcconfig"; path = "Target Support Files/Pods-Mytimer/Pods-Mytimer.release.xcconfig"; sourceTree = "<group>"; };
+		9518A0AB25BD56F200B26C7F /* TimerListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerListTableViewCell.swift; sourceTree = "<group>"; };
+		9518A0AC25BD56F200B26C7F /* TimerListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerListTableViewCell.xib; sourceTree = "<group>"; };
 		955870A425BC40C4004575A8 /* MyTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTimer.swift; sourceTree = "<group>"; };
 		955870A725BC4133004575A8 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		958C19FE25BC068200A8CD53 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +56,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9518A0A825BD56C700B26C7F /* TimerList */ = {
+			isa = PBXGroup;
+			children = (
+				9518A0AB25BD56F200B26C7F /* TimerListTableViewCell.swift */,
+				9518A0AC25BD56F200B26C7F /* TimerListTableViewCell.xib */,
+			);
+			path = TimerList;
+			sourceTree = "<group>";
+		};
 		955870AA25BC4139004575A8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +90,7 @@
 				95AD244425BAFF93005D7E34 /* Main.storyboard */,
 				95AD244725BAFF94005D7E34 /* Assets.xcassets */,
 				95AD244925BAFF94005D7E34 /* LaunchScreen.storyboard */,
+				9518A0A825BD56C700B26C7F /* TimerList */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -192,6 +206,7 @@
 				95AD244B25BAFF94005D7E34 /* LaunchScreen.storyboard in Resources */,
 				95AD244825BAFF94005D7E34 /* Assets.xcassets in Resources */,
 				95AD244625BAFF93005D7E34 /* Main.storyboard in Resources */,
+				9518A0AE25BD56F200B26C7F /* TimerListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95CD273825BBC78E00B8B89C /* SettingViewController.swift in Sources */,
+				9518A0AD25BD56F200B26C7F /* TimerListTableViewCell.swift in Sources */,
 				95CD273B25BBC93400B8B89C /* Extensions.swift in Sources */,
 				955870A525BC40C4004575A8 /* MyTimer.swift in Sources */,
 				958C19FF25BC068200A8CD53 /* ListViewController.swift in Sources */,
