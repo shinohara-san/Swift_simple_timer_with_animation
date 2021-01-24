@@ -10,23 +10,30 @@ import RealmSwift
 
 class DatabaseManager {
     static let shared = DatabaseManager()
+    
     private init() {}
     
-    var allTimers = [MyTimer]()
+    public var timerArray = [MyTimer]()
     
-    func getAllTimers(for tableView: UITableView){
-        
+    public func getAllTimers(for tableView: UITableView){
+        let realm = try! Realm()
+        let allTimers = realm.objects(MyTimer.self).sorted(byKeyPath: "date", ascending: false)
+        timerArray = Array(allTimers)
     }
     
     public func saveTimer(newTimer: MyTimer, completion: @escaping (Bool) -> Void){
         if newTimer.title == "" {
             newTimer.title = "名無しのタイマー"
         }
-
-        let realm = try! Realm()
-        try! realm.write {
-            realm.add(newTimer)
-            print(Realm.Configuration.defaultConfiguration.fileURL!)
+        
+        do {
+            let realm = try Realm()
+            try realm.write{
+                realm.add(newTimer)
+            }
+        } catch let error as NSError {
+            print(error)
+            completion(false)
         }
         
         completion(true)

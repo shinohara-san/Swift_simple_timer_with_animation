@@ -42,6 +42,7 @@ class SettingViewController: UIViewController {
                 self?.showAlert(title: "\(newTimer.title)を登録しました。", message: "")
                 UserDefaults.standard.setValue(newTimer.title, forKey: "savedTitle")
                 UserDefaults.standard.set(newTimer.time, forKey: "savedTime")
+                self?.titleTextField.text = ""
             } else {
                 self?.showAlert(title: "エラー", message: "登録できませんでした。")
                 return

@@ -14,6 +14,7 @@ class ListViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        DatabaseManager.shared.getAllTimers(for: tableView)
     }
 
 }
