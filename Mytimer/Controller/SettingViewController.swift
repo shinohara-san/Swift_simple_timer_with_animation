@@ -39,7 +39,7 @@ class SettingViewController: UIViewController {
         
         DatabaseManager.shared.saveTimer(newTimer: newTimer) { [weak self](success) in
             if success {
-                self?.showAlert(title: "\(newTimer.title)を登録しました。", message: "")
+                self?.showAlert(title: "\(newTimer.title)を登録・セットしました。", message: "")
                 UserDefaults.standard.setValue(newTimer.title, forKey: "savedTitle")
                 UserDefaults.standard.set(newTimer.time, forKey: "savedTime")
                 self?.titleTextField.text = ""

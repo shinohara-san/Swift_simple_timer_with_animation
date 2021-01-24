@@ -47,11 +47,19 @@ class DatabaseManager {
         completion(true)
     }
     
-    func updateTimer(){
-        
-    }
-    
-    func deleteTimer(){
-        
+    func deleteTimer(selectedTimer: MyTimer, completion: @escaping (Bool) -> Void){
+        do {
+            let realm = try Realm()
+            guard let data = realm.objects(MyTimer.self)
+                    .filter("id == '\(selectedTimer.id)'")
+                    .first else {return}
+            try realm.write({
+                realm.delete(data)
+                completion(true)
+            })
+        } catch let error as NSError {
+            print(error)
+            completion(false)
+        }
     }
 }
