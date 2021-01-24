@@ -14,14 +14,14 @@ class SettingViewController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     
     var dataList: [String] = []
-    var chosenTime = 10
+    var chosenTime = 30
     
     override func viewDidLoad() {
         super.viewDidLoad()
         timePickerView.delegate = self
         timePickerView.dataSource = self
         getDataList()
-        
+//        https://appleharikyu.jp/iphone/?p=1541
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
@@ -57,8 +57,8 @@ class SettingViewController: UIViewController {
     }
     
     func getDataList(){
-        for i in 0...300{
-            if i % 10 == 0, i != 0 {
+        for i in 0...600{
+            if i % 30 == 0, i != 0 {
                 dataList.append(formatTime(time: i))
             }
         }
