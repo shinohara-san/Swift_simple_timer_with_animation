@@ -14,20 +14,38 @@ class SettingViewController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     
     var dataList: [String] = []
+    var chosenTime = 10
     
     override func viewDidLoad() {
         super.viewDidLoad()
         timePickerView.delegate = self
         timePickerView.dataSource = self
         getDataList()
+        
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
-        //タイトルとタイマー時間と日時をオブジェクトでrealmに保存→ListVCで一覧表示
+        let newTimer = MyTimer()
+        newTimer.id = UUID().uuidString
         if let title = titleTextField.text {
-            UserDefaults.standard.setValue(title, forKey: "savedTitle")
+            newTimer.title = title
         } else {
-            UserDefaults.standard.setValue("", forKey: "savedTitle")
+            newTimer.title = "名無しのタイマー"
+        }
+        newTimer.time = chosenTime
+        let formatter = DateFormatter()
+        formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "yMdkHms", options: 0, locale: Locale(identifier: "ja_JP"))
+        newTimer.date = formatter.string(from: Date())
+        
+        DatabaseManager.shared.saveTimer(newTimer: newTimer) { [weak self](success) in
+            if success {
+                self?.showAlert(title: "\(newTimer.title)を登録しました。", message: "")
+                UserDefaults.standard.setValue(newTimer.title, forKey: "savedTitle")
+                UserDefaults.standard.set(newTimer.time, forKey: "savedTime")
+            } else {
+                self?.showAlert(title: "エラー", message: "登録できませんでした。")
+                return
+            }
         }
     }
     
@@ -43,6 +61,13 @@ class SettingViewController: UIViewController {
                 dataList.append(formatTime(time: i))
             }
         }
+    }
+    
+    private func showAlert(title: String, message: String ){
+        let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(ac, animated: true)
+        return
     }
 }
 
@@ -70,7 +95,7 @@ extension SettingViewController: UIPickerViewDelegate, UIPickerViewDataSource{
         
         if let minute = Int(array[0]), let second = Int(array[1]) {
             let time = minute * 60 + second
-            UserDefaults.standard.set(time, forKey: "savedTime")
+            chosenTime = time
         } else {
             print("変換できません")
         }

@@ -42,9 +42,8 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="たいとる" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KY0-7x-L5m">
-                                <rect key="frame" x="157" y="108" width="100" height="50"/>
+                                <rect key="frame" x="20" y="108" width="374" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="gdz-Nh-LJB"/>
                                     <constraint firstAttribute="height" constant="50" id="zku-yr-jN3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -61,12 +60,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
+                            <constraint firstItem="KY0-7x-L5m" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="2DX-Bo-141"/>
                             <constraint firstItem="KY0-7x-L5m" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9wO-rk-uxl"/>
                             <constraint firstItem="gW7-Y8-Noo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="E2S-6R-Uw9"/>
                             <constraint firstItem="rHq-L1-A1t" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="HNw-nC-cyk"/>
                             <constraint firstItem="rHq-L1-A1t" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hSx-cW-fzG"/>
                             <constraint firstItem="KY0-7x-L5m" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="kmn-Ud-RZL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gW7-Y8-Noo" secondAttribute="trailing" constant="20" id="l0n-W2-dBA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KY0-7x-L5m" secondAttribute="trailing" constant="20" id="vEF-wA-wwY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gW7-Y8-Noo" secondAttribute="bottom" constant="20" id="xSF-UN-Qmg"/>
                         </constraints>
                     </view>
