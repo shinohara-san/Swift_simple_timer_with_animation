@@ -30,7 +30,10 @@ class TimerListTableViewCell: UITableViewCell {
     
     func configure(with model: MyTimer){
         self.titleLabel.text = model.title
-        self.timerLabel.text = "\(model.time)"
+        let minutes = model.time / 60 % 60
+        let seconds = model.time % 60
+        let shownTime = String(format:"%02i:%02i", minutes, seconds)
+        self.timerLabel.text = shownTime
         self.dateLabel.text = model.date
     }
     
