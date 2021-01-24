@@ -15,6 +15,7 @@
 		9518A0AE25BD56F200B26C7F /* TimerListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9518A0AC25BD56F200B26C7F /* TimerListTableViewCell.xib */; };
 		955870A525BC40C4004575A8 /* MyTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955870A425BC40C4004575A8 /* MyTimer.swift */; };
 		955870A825BC4133004575A8 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955870A725BC4133004575A8 /* DatabaseManager.swift */; };
+		9569386825BDA4FB00D4B6DD /* start.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9569386725BDA4FB00D4B6DD /* start.mp3 */; };
 		958C19FF25BC068200A8CD53 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958C19FE25BC068200A8CD53 /* ListViewController.swift */; };
 		95AD243F25BAFF93005D7E34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AD243E25BAFF93005D7E34 /* AppDelegate.swift */; };
 		95AD244125BAFF93005D7E34 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AD244025BAFF93005D7E34 /* SceneDelegate.swift */; };
@@ -35,6 +36,7 @@
 		9518A0AC25BD56F200B26C7F /* TimerListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerListTableViewCell.xib; sourceTree = "<group>"; };
 		955870A425BC40C4004575A8 /* MyTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTimer.swift; sourceTree = "<group>"; };
 		955870A725BC4133004575A8 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		9569386725BDA4FB00D4B6DD /* start.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = start.mp3; sourceTree = "<group>"; };
 		958C19FE25BC068200A8CD53 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		95AD243B25BAFF93005D7E34 /* Mytimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mytimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95AD243E25BAFF93005D7E34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -68,7 +70,6 @@
 				950A4F0725BD9E2A00ACC578 /* mp3 */,
 				95AD243E25BAFF93005D7E34 /* AppDelegate.swift */,
 				95AD244025BAFF93005D7E34 /* SceneDelegate.swift */,
-				95AD244C25BAFF94005D7E34 /* Info.plist */,
 				95CD273A25BBC93400B8B89C /* Extensions.swift */,
 			);
 			path = Resource;
@@ -77,6 +78,7 @@
 		950A4F0725BD9E2A00ACC578 /* mp3 */ = {
 			isa = PBXGroup;
 			children = (
+				9569386725BDA4FB00D4B6DD /* start.mp3 */,
 				950A4F0025BD9DF200ACC578 /* 10sec.mp3 */,
 				950A4F0425BD9E1700ACC578 /* end.mp3 */,
 				950A4EFF25BD9DF200ACC578 /* last.mp3 */,
@@ -148,6 +150,7 @@
 				955870AA25BC4139004575A8 /* Model */,
 				958C19FB25BBFE7100A8CD53 /* View */,
 				958C19F925BBFE5700A8CD53 /* Controller */,
+				95AD244C25BAFF94005D7E34 /* Info.plist */,
 			);
 			path = Mytimer;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				950A4F0125BD9DF200ACC578 /* last.mp3 in Resources */,
 				950A4F0525BD9E1700ACC578 /* end.mp3 in Resources */,
 				95AD244825BAFF94005D7E34 /* Assets.xcassets in Resources */,
+				9569386825BDA4FB00D4B6DD /* start.mp3 in Resources */,
 				95AD244625BAFF93005D7E34 /* Main.storyboard in Resources */,
 				9518A0AE25BD56F200B26C7F /* TimerListTableViewCell.xib in Resources */,
 			);

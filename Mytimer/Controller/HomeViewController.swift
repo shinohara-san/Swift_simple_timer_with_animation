@@ -4,9 +4,8 @@
 //
 //  Created by Yuki Shinohara on 2021/01/22.
 
-///  アニメーション動き出したらgotosettingさせない
-
 import UIKit
+import AVFoundation
 
 class HomeViewController: UIViewController, CAAnimationDelegate {
     
@@ -20,14 +19,19 @@ class HomeViewController: UIViewController, CAAnimationDelegate {
     let animatation = CABasicAnimation(keyPath: "strokeEnd")
     var isAnimationStarted = false
     
+    var beginSoundRang = false
+    var remain10Rang = false
+//    var remain5Rang = false
+    
     var timer = Timer()
     var isTimerStarted = false
     var time: Int = 90
     
+    var player:AVAudioPlayer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         drawBackLayer()
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -48,6 +52,10 @@ class HomeViewController: UIViewController, CAAnimationDelegate {
             isTimerStarted = true
             startButton.setTitle("Pause", for: .normal)
             startButton.setTitleColor(UIColor.orange, for: .normal)
+            if !beginSoundRang{
+                playSound(remain: "開始")
+                beginSoundRang = true
+            }
         } else {
             pauseAnimation() //Animation
             timer.invalidate()
@@ -67,6 +75,9 @@ class HomeViewController: UIViewController, CAAnimationDelegate {
         isTimerStarted = false
         time = UserDefaults.standard.integer(forKey: "savedTime")
         remainSecLabel.text = formatTime()
+        beginSoundRang = false
+        remain10Rang = false
+        remain5Rang = false
     }
     
     func drawBackLayer(){
@@ -108,10 +119,25 @@ class HomeViewController: UIViewController, CAAnimationDelegate {
             timer.invalidate()
             time = UserDefaults.standard.integer(forKey: "savedTime")
             isTimerStarted = false
+            playSound(remain: "終了")
             remainSecLabel.text = formatTime()
+            remain10Rang = false
+//            remain5Rang = false
+            beginSoundRang = false
         } else {
             time -= 1
             remainSecLabel.text = formatTime()
+            if time < 6 {
+                if !remain5Rang{
+                    playSound(remain: "残り5")
+//                    remain5Rang = true
+                }
+            } else if time < 11 {
+                if !remain10Rang{
+                    playSound(remain: "残り10")
+                    remain10Rang = true
+                }
+            }
         }
     }
     
@@ -122,8 +148,6 @@ class HomeViewController: UIViewController, CAAnimationDelegate {
     }
     
     func startResumedAnimation(){
-        //        Startを押したときにタイマーが走っていない時に発動→animationが始まっていたらresumeでまだだったらstartが発火
-        //        ※timerStartedとanimeStartedをごっちゃにしない
         if !isAnimationStarted {
             startAnimation()
         } else {
@@ -176,6 +200,32 @@ class HomeViewController: UIViewController, CAAnimationDelegate {
         foreProgressLayer.strokeEnd = 0.0
         foreProgressLayer.removeAllAnimations()
         isAnimationStarted = false
+    }
+    
+    func playSound(remain: String) {
+        let startSoundURL = Bundle.main.url(forResource: "start", withExtension: "mp3")
+        let firstSoundURL = Bundle.main.url(forResource: "10sec", withExtension: "mp3")
+        let secondSoundURL = Bundle.main.url(forResource: "last", withExtension: "mp3")
+        let endSoundURL = Bundle.main.url(forResource: "end", withExtension: "mp3")
+        let url: URL?
+        switch remain {
+        case "開始":
+            url = startSoundURL
+        case "残り10":
+            url = firstSoundURL
+        case "残り5":
+            url = secondSoundURL
+        case "終了":
+            url = endSoundURL
+        default:
+            url = nil
+        }
+        do {
+            player = try AVAudioPlayer(contentsOf: url!)
+            player?.play()
+        } catch {
+            print("error...")
+        }
     }
     
     //これを追加したらタイマー残り0の時に赤い部分が消える?? startAnimationにdelegate追加
