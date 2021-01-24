@@ -16,9 +16,17 @@ class DatabaseManager {
     public var timerArray = [MyTimer]()
     
     public func getAllTimers(for tableView: UITableView){
-        let realm = try! Realm()
-        let allTimers = realm.objects(MyTimer.self).sorted(byKeyPath: "date", ascending: false)
-        timerArray = Array(allTimers)
+        do {
+          let realm = try Realm()
+          let allTimers = realm.objects(MyTimer.self).sorted(byKeyPath: "date", ascending: false)
+          timerArray = Array(allTimers)
+        } catch let error as NSError {
+          print(error)
+        }
+        
+        DispatchQueue.main.async {
+            tableView.reloadData()
+        }
     }
     
     public func saveTimer(newTimer: MyTimer, completion: @escaping (Bool) -> Void){

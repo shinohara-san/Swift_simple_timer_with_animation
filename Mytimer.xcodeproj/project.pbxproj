@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0E99C4F1A4D3485BD8C9346E /* Pods_Mytimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09780AE3D19639A8200B1D1 /* Pods_Mytimer.framework */; };
 		955870A525BC40C4004575A8 /* MyTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955870A425BC40C4004575A8 /* MyTimer.swift */; };
-		955870A825BC4133004575A8 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955870A725BC4133004575A8 /* DataSource.swift */; };
+		955870A825BC4133004575A8 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955870A725BC4133004575A8 /* DatabaseManager.swift */; };
 		958C19FF25BC068200A8CD53 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958C19FE25BC068200A8CD53 /* ListViewController.swift */; };
 		95AD243F25BAFF93005D7E34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AD243E25BAFF93005D7E34 /* AppDelegate.swift */; };
 		95AD244125BAFF93005D7E34 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AD244025BAFF93005D7E34 /* SceneDelegate.swift */; };
@@ -24,7 +24,7 @@
 /* Begin PBXFileReference section */
 		2C5FE235291A6D2497E4A029 /* Pods-Mytimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mytimer.release.xcconfig"; path = "Target Support Files/Pods-Mytimer/Pods-Mytimer.release.xcconfig"; sourceTree = "<group>"; };
 		955870A425BC40C4004575A8 /* MyTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTimer.swift; sourceTree = "<group>"; };
-		955870A725BC4133004575A8 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		955870A725BC4133004575A8 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		958C19FE25BC068200A8CD53 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		95AD243B25BAFF93005D7E34 /* Mytimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mytimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95AD243E25BAFF93005D7E34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,7 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				955870A425BC40C4004575A8 /* MyTimer.swift */,
-				955870A725BC4133004575A8 /* DataSource.swift */,
+				955870A725BC4133004575A8 /* DatabaseManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -250,7 +250,7 @@
 				958C19FF25BC068200A8CD53 /* ListViewController.swift in Sources */,
 				95AD243F25BAFF93005D7E34 /* AppDelegate.swift in Sources */,
 				95AD244125BAFF93005D7E34 /* SceneDelegate.swift in Sources */,
-				955870A825BC4133004575A8 /* DataSource.swift in Sources */,
+				955870A825BC4133004575A8 /* DatabaseManager.swift in Sources */,
 				95AD245525BB02EB005D7E34 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
